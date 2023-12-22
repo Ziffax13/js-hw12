@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+</head>
+
+<body>
+    <label for="radiusInput">r:</label>
+    <input type="number" id="radiusInput" placeholder="Radius">
+
+    <label for="heightInput">h:</label>
+    <input type="number" id="heightInput" placeholder="Height">
+
+    <button id="calculateBtn">Calculate Volume</button>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click', function () {
+            const radius = parseFloat(document.getElementById('radiusInput').value);
+            const height = parseFloat(document.getElementById('heightInput').value);
+
+            if (!isNaN(radius) && !isNaN(height)) {
+                const volume = Math.PI * Math.pow(radius, 2) * height;
+
+                document.getElementById('result').textContent = `V =  ${volume.toFixed(2)} cubic units.`;
+            } else {
+                document.getElementById('result').textContent = 'Please enter valid values for radius and height.';
+            }
+        });
+    </script>
+</body>
+
+</html>
